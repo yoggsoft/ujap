@@ -1,0 +1,15 @@
+function[]=MainCaminos(inicio,Nnodos,actual,destino,MAX,G)
+estado=zeros(MAX,1)';
+for i=1:MAX
+    estado(i)=0;
+    for j=1:MAX
+        G(i,j)=false;
+    end
+end
+for i=1:size(actual,1)
+    G(actual(i),destino(i))=true;
+    a=inicio;
+    estado(0)=inicio;
+    buscarCaminos(nodos,G,estado);
+end
+end;

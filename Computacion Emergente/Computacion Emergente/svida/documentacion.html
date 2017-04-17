@@ -1,0 +1,39 @@
+<HTML>
+<HEAD>
+<title>SVIDA: Una sencillisima implementacion del juego de la vida de Conway</title>
+</head>
+<BODY bgcolor="#E0E0E0">
+<H1 align="center">SVIDA</H1>
+<H2 align="center">El juego de la vida de Conway</H2>
+
+<H2>Autómatas Celulares</H2>
+<P align="justify">Los autómatas celulares son redes de autómatas simples conectados localmente. Cada autómata simple produce una salida a partir de varias entradas, modificando en el proceso su estado según una función de transición. Por lo general, en un autómata celular, el estado de una célula en una generación determinada depende única y exclusivamente de los estados de las células vecinas y de su propio estado en la generación anterior.</p>
+<P align="justify">Los autómatas celulares son herramientas útiles para modelar cualquier sistema en el universo. Pueden considerarse como una buena alternativa a las ecuaciones diferenciales y han sido utilizados para modelar sistemas físicos, como interacciones entre partículas, formación de galaxias, cinética de sistemas moleculares y crecimiento de cristales, así como diversos sistemas biológicos a nivel celular, multicelular y poblacional.</P>
+
+<H2>El juego de la vida de Conway</H2>
+<P align="justify">Uno de los autómatas celulares más conocidos es el que John Horton Conway llamó el juego VIDA (Life Game). El juego VIDA es un autómata celular bidimensional en cuadrícula con dos estados por celda. En este caso se trata de un mundo toroidal, es decir; la ultima fila es contigua a la primera, la ultima columna es vecina de la primera. Cada celda puede estar tener una célula y en cada generación se aplica un algoritmo que sigue estas tres reglas:</p>
+<OL>
+   <LI>Cada célula viva con dos o tres células vecinas vivas sobrevive a la siguiente generación.</p>
+   <LI>Cada célula viva con ninguna, una, o más de tres células vivas a su alrededor se muere.</p>
+   <LI>En cada celda con tres células vecinas, en la siguiente generación, nace una célula.</p>
+</OL>
+<P align="justify">Como facilmente se puede deducir el estado de cada celula (viva o muerta) depende exclusivamente del estado de sus vecinas. En este algoritmo se considera que cada célula tiene 8 vecinos.</P>
+<P align="justify">El juego VIDA presenta configuraciones finales estables, periódicas o no. Langton defiende que presenta propiedades de catálisis (acciones de construcción arbitrarias), de transporte (borrando estructuras y reconstruyéndolas en otro lugar del espacio celular), estructurales (como elementos estáticos, barreras, etc.), de regulación, defensa e incluso informativas, y que por tanto estos autómatas virtuales tienen capacidades computacionales suficientes para cumplir los papeles funcionales que juegan las macromoléculas en la lógica molecular de la vida. En definitiva, que funcionalmente, los autómatas son equiparables a los componentes básicos de la vida en nuestro planeta.
+
+<H2>La implementación SVIDA</H2>
+<P align="justify">El juego VIDA ha tenido multitud de implementaciones. He decidido hacer una mas, aprovechando mi introduccion en la ciencia ALIVE. La eleccion de implantar este algoritmo en primer lugar obedece a varias razones; por una parte es uno de los mas sencillos, por otra historicamente fue el primer algoritmo implementado.</P>
+<P align="justify">Hay multitud de implementaciones, y esta no es ni la mas rapida ni la mas bonita. ¿que sentido tiene entonces?. Principalmente dos; El primero aprender haciendo, el segundo es que seguramente esta sea, seguramente, la implementacion mas clara y sencilla.</P>
+<P align="justify">La implementacion se ha llevado a cabo en lenguaje C, sin recurrir a los objetos. Se hay usado funciones lo mas estandar posibles, aunque las funciones de impresion son dependientes del sistema operativo (se usan en pro de la claridad de implementacion). El código fuente se ha comentado ampliamente, y se han tenido en todo momento la sencillez y claridad como principal preocupacion. Por eso te animamos a estudiar el codigo fuente aunque tengas muy poca idea de C.</P> 
+<P align="justify">En esta implementacion hay una serie de cambios en bien de la sencillez.
+<UL>
+   <LI>El mundo es toridal, es decir, la primera fila se considera contigua a la ultima, y la primera columna es contigua a la ultima.</LI>
+   <LI>El mundo se ha definido como una matriz de 80x49, aunque facilmente podremos elegir otros tamaños.</LI>
+   <LI>Se consideran vecinas las 8 celulas contiguas.</LI>
+   <LI>La exploracion de la matriz es instantanea. Todos los cambios no son tenidos en cuenta hasta el siguiente ciclo. Es como si toda la matriz se actualizase en el mismo instante de tiempo.</LI>
+   <LI>En cada ciclo, si una celula esta vacia y tiene tres vecinas llenas, esta casilla se llena.</LI>
+   <LI>En cada ciclo, si una casilla esta llena y tiene mas de dos vecinos y menos de cuatro la celula sobrevive.</LI>
+</UL>
+</P>
+
+</BODY>
+</HTML>

@@ -1,0 +1,11 @@
+function[]=ingresaArchivo()
+nombrearchivo = input('Ingrese el nombre del archivo: ','s');
+[arch,error]=fopen(nombrearchivo,'r');
+if (arch > -1)
+    vector = fscan(arch,'%d');
+    res=fclose(arch);
+    disp('los numeros son: ');
+    disp('vector');
+else 
+    disp('Error al abrir el archivo');
+end

@@ -1,0 +1,12 @@
+function[MAT]=warshall(mat,N)
+for k=1:N
+    for i=1:N
+        for j=1:N
+            
+            mat(i,j)=mat(i,j) | (mat(i,k)&mat(k,j));
+            
+        end
+    end
+end
+MAT=mat;
+end

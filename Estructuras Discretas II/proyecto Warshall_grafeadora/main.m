@@ -1,0 +1,69 @@
+function[]= main()
+clc;
+Rx=1;
+while(Rx<=3)
+disp(' UNIVERSIDAD JOSE ANTONIO PAEZ')
+disp(' FACULTAD DE INGENIERIA')
+disp(' ESCUELA DE COMPUTACION')
+disp(' ASIGNATURA: ESTRUCTURAS DISCRETAS 2')
+disp(' PROFESOR: SORAYA AGUILAR')
+disp(' INTEGRANTES: ')     
+disp(' Manuel Antonio Reyes  (version Matlab)')
+disp(' Rafael Hernandez      (version C++)')
+
+    disp('||=========================================================================||');
+    disp('||A L I A N Z A   P A R A   U N   M A N U E L   S I N   D I S C R E T A S 2||');
+    disp('||=========================================================================||');
+    disp('||                                                                         ||');
+    disp('||  Seleccione como introducir los datos:                                  ||');
+    disp('||       (1) Ingreso por Archivo                                           ||');
+    disp('||       (2) Ingreso Manual                                                ||');
+    disp('||       (3) CREDITOS                                                      ||');
+    disp('||       (4) SALIR                                                         ||');
+    disp('||                                                                         ||');
+    disp('||=========================================================================||');
+    Rx=input('             Seleccione una opción: ');
+  
+    switch(Rx)
+    case 1,
+        clc
+        ingresaArchivo
+        disp('Presione cualquier tecla para volver al menu inicial...')
+        pause;
+        clc
+        case 2,
+            clc
+            manualInput
+            disp('Presione cualquier tecla para volver al menu inicial...')
+            pause;
+            clc
+            
+        case 3,
+            clc
+       disp('      _   __                        ');
+       disp('     | | / /                        ');
+       disp('     | |/ /  ___   ___  _ __   __ _ ');
+       disp('     |    \ / _ \ / _ \|  _ \ / _` |');
+       disp('     | |\  \ (_) | (_) | |_) | (_| |');
+       disp('     \_| \_/\___/ \___/| .__/ \__,_|');
+       disp('                       | |          ');
+       disp('                       |_|          ');
+       disp(',_____ _ _              _           ');
+       disp('| ___ (_) |            | |          ');
+       disp('| |_/ /_| | ____ _  ___| |__  _   _ ');
+       disp('|  __/| | |/ / _` |/ __| |_ \| | | |');
+       disp('| |   | |   < (_| | (__| | | | |_| |');
+       disp('\_|   |_|_|\_\__,_|\___|_| |_|\__,_|');
+       disp(''); 
+       disp('Presione Cualquier tecla para volver al menu...')
+       pause;
+       clc 
+        case 4,
+            clc
+            disp('Gracias por probar nuestro software y ponernos buena calificacion por excelencia...');
+            disp('Para mas informacion, visite http:\\www.yoggsoft.com');
+            break
+    end
+end
+end
+            

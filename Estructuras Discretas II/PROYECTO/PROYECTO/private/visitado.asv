@@ -1,0 +1,11 @@
+function[fueVisitado]=visitado(nodo,state)
+fueVisitado=false;
+Nod=nodo;
+estVisitado=state;
+cursor=1;
+while (estVisitado(cursor))
+    if (estVisitado(cursor)==Nod)
+        fueVisitado=true;
+        cursor=cursor+1;
+    end
+end
